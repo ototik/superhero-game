@@ -9,13 +9,14 @@ class Cards extends React.Component {
             image: "",
             powerstats: "",
             biography: "",
-            attackPower: ""
+            attackPower: "",
+            randomInt: Math.floor(Math.random() * Math.floor(731))
         }
         this.calcAP = this.calcAP.bind(this);
     }
 
     componentDidMount() {
-        fetch('https://www.superheroapi.com/api.php/4230529273639827/310')
+        fetch(`https://www.superheroapi.com/api.php/4230529273639827/${this.state.randomInt}`)
         .then(res => res.json())
         .then((data) => {
           this.setState({ 
@@ -32,7 +33,6 @@ class Cards extends React.Component {
     calcAP() {
         let stats = Object.values(this.state.powerstats)
         let sum = 0;
-        console.log(stats, 'stats')
         stats.map(element => {
             return sum = (Math.floor(sum += parseInt(element)))
         })
@@ -41,8 +41,8 @@ class Cards extends React.Component {
 
 
     render() {
-        let { image, powerstats, biography, apidata, AP } = this.state
-        console.log('render', apidata, AP, "calcAP")
+        let { image, powerstats, biography, AP } = this.state
+        console.log()
         return (
             <div>
                 <div className='cardcontainer'>
