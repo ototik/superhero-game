@@ -18,18 +18,24 @@ class Nhp extends React.Component {
   render() {
     return (
       <div className="container">
-        <h3>HEALTH POINTS</h3>
         <div className="players">
           <div className="player1">
-            <p>{data.name1}</p>
-            <p>{data.hp1}</p>
+            <p>
+              {" "}
+              <span style={{ fontWeight: "bold" }}> {data.name1} </span>/{" "}
+              {data.hp1} HP
+            </p>
+
             <div className="meter">
               <span id="meter1" style={{ width: this.state.hp1 + "%" }}></span>
             </div>
           </div>
           <div className="player2">
-            <p>{data.name2}</p>
-            <p>{data.hp2}</p>
+            <p>
+              <span style={{ fontWeight: "bold" }}> {data.name2}</span> /{" "}
+              {data.hp2} HP
+            </p>
+
             <div className="meter">
               <span id="meter2" style={{ width: this.state.hp2 + "%" }}></span>
             </div>
