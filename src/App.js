@@ -1,18 +1,14 @@
-import React from "react";
-import "./App.css";
-import Nhp from "./components/Nhp.js";
-import NCardDetails from "./components/NCardDetails";
-import Routes from "./Routes";
+import React from 'react';
+import './App.css';
+import Routes from './Routes';
 
-function App() {
-  return (
-    <div className="App">
-      {/*  <Nhp /> */}
-      {/* 
-      <NCardDetails /> */}
-      <Routes />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Routes />
+      </div>
+    );
+  }
 }
-
 export default App;

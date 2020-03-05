@@ -40,7 +40,7 @@ class Welcome extends Component {
             </h3>
           )}
           <br />
-          <Link to="/Card">
+          <Link to="/Game">
             <button
               id="start-game"
               ref={ref => {
@@ -48,7 +48,7 @@ class Welcome extends Component {
               }}
             >
               Start the game
-            </button>
+          </button>
           </Link>
         </div>
       </div>
