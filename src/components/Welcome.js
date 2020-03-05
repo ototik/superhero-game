@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Welcome.css";
+import { Link } from "react-router-dom";
 
 class Welcome extends Component {
   state = {
@@ -39,14 +40,16 @@ class Welcome extends Component {
             </h3>
           )}
           <br />
-          <button
-            id="start-game"
-            ref={ref => {
-              this.btn = ref;
-            }}
-          >
-            Start the game
-          </button>
+          <Link to="/Card">
+            <button
+              id="start-game"
+              ref={ref => {
+                this.btn = ref;
+              }}
+            >
+              Start the game
+            </button>
+          </Link>
         </div>
       </div>
     );
