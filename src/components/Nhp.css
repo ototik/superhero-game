@@ -1,19 +1,21 @@
 .container {
+  display: flex;
 }
-.players {
+/* .players {
   display: inline-grid;
-}
+} */
 
 .player1 {
-  display: inline-block;
+  display: block;
 }
 
 .player2 {
-  display: inline-block;
+  display: block;
 }
 
 .meter {
   height: 10px;
+  width: 240px;
   position: relative;
   background: #555;
   -moz-border-radius: 25px;
@@ -60,4 +62,8 @@
     inset 0 -2px 6px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
+}
+
+#hp {
+  display: flex;
 }

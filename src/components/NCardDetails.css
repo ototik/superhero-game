@@ -1,10 +1,11 @@
 .card {
-  width: 250px;
-  background-color: gray;
+  height: 280px;
+  background-color: rgba(122, 152, 216, 0.925);
   border-radius: 15px;
-  opacity: 75%;
+  opacity: 100%;
   box-shadow: 0px 0px 15px 4px rgba(113, 113, 113, 0.68);
-  margin: 20px;
+  /* margin: 20px; */
+  font-size: 1rem;
 }
 
 label {
@@ -15,6 +16,8 @@ p {
   margin-top: 0px;
   margin: 0px;
   margin-bottom: 1px;
+  font-size: 14px;
+  text-align: center;
 }
 
 hr {

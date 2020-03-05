@@ -21,29 +21,47 @@ class NCardDetails extends React.Component {
     return (
       <div className="card">
         <div>
-          <label>#ID: </label>
-          <p>{this.state.id}</p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>#ID:</span> {this.state.id}
+          </p>
           <hr />
-          <label>NAME:</label>
-          <p> {this.state.name}</p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>NAME:</span> {this.state.name}
+          </p>
           <hr />
-          <label>INTELLIGENCE: </label>
-          <p>{this.state.intelligence}</p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>INTELLIGENCE:</span>{" "}
+            {this.state.intelligence}
+          </p>
           <hr />
-          <label>STRENGTH: </label>
-          <p>{this.state.strength} </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>STRENGTH:</span>{" "}
+            {this.state.strength}
+          </p>
           <hr />
-          <label>SPEED:</label>
-          <p> {this.state.speed} </p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>SPEED:</span>
+            {this.state.speed}
+          </p>
           <hr />
-          <label>DURABILITY: </label>
-          <p>{this.state.durability} </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>DURABILITY:</span>{" "}
+            {this.state.durability}
+          </p>
           <hr />
-          <label>POWER:</label>
-          <p> {this.state.power}</p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>POWER:</span>
+            {this.state.power}
+          </p>
           <hr />
-          <label>COMBAT: </label>
-          <p>{this.state.combat}</p>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>COMBAT:</span>
+            {this.state.combat}{" "}
+          </p>
         </div>
       </div>
     );
