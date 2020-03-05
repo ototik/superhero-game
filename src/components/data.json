@@ -1,0 +1,7 @@
+{
+  "name1": "Player 1",
+  "hp1": 30,
+  "name2": "Player 2",
+  "hp2": 30,
+  "winner": "user"
+}

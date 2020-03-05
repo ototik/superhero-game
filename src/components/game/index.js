@@ -1,9 +1,9 @@
 import React from 'react';
-import End from './End.js';
+import Game from './Game.js';
 
 function Index() {
   return (
-    <End />
+    <Game />
   );
 }
 

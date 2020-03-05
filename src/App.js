@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import Index from './components/the-end/index.js';
+import Routes from './Routes';
 
-function App() {
-  return (
-    <div className="App">
-      <Index />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Routes />
+      </div>
+    );
+  }
 }
-
 export default App;

@@ -1,0 +1,41 @@
+.container {
+  text-align: center;
+}
+
+.main-content {
+  width: 100%;
+}
+
+#game-title {
+  font-size: 70px;
+}
+
+#welcome {
+  font-size: 40px;
+}
+
+#start-game {
+  margin-top: 20px;
+  box-shadow: rgb(255, 246, 175) 0px 1px 0px 0px;
+  background: linear-gradient(rgb(255, 236, 100) 5%, rgb(255, 171, 35) 100%)
+    rgb(255, 236, 100);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 170, 34);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(51, 51, 51);
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: rgb(255, 238, 102) 0px 1px 0px;
+}
+#start-game:hover {
+  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  background-color: #ffab23;
+}
+#start-game:active {
+  position: relative;
+  top: 1px;
+}
