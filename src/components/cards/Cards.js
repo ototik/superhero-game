@@ -8,8 +8,10 @@ class Cards extends React.Component {
             apidata: "",
             image: "",
             powerstats: "",
-            biography: ""
+            biography: "",
+            attackPower: ""
         }
+        this.calcAP = this.calcAP.bind(this);
     }
 
     componentDidMount() {
@@ -22,16 +24,25 @@ class Cards extends React.Component {
               biography: data.biography,
               powerstats: data.powerstats
             })
+            this.calcAP()
+            console.log()
         })
     }
 
-    createCard() {
-
+    calcAP() {
+        let stats = Object.values(this.state.powerstats)
+        let sum = 0;
+        console.log(stats, 'stats')
+        stats.map(element => {
+            return sum = (Math.floor(sum += parseInt(element)))
+        })
+        this.setState({ AP: Math.floor(sum / stats.length) })
     }
 
+
     render() {
-        let { image, powerstats, biography } = this.state
-        console.log('render', biography, powerstats)
+        let { image, powerstats, biography, apidata, AP } = this.state
+        console.log('render', apidata, AP, "calcAP")
         return (
             <div>
                 <div className='cardcontainer'>
@@ -43,6 +54,9 @@ class Cards extends React.Component {
                     <p>Durability {powerstats.durability}</p>
                     <p>Power {powerstats.power}</p>
                     <p>Combat {powerstats.combat}</p>
+                    <p>Attack Power {AP}</p>
+                    <p>Health Points {powerstats.durability}</p>
+
                 </div>
             </div>
         )
