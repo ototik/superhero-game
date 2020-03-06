@@ -26,8 +26,8 @@ class Welcome extends Component {
         }} */
       >
         <div className="main-content">
-          <h1 id="game-title">Hero Game</h1>
-          <h1 id="welcome">Welcome</h1>
+          <h1 id="game-title">Find your Hero</h1>
+          <h1 id="welcome">Card Game</h1>
           <button id="how-to" onClick={this.toggle}>
             Let's see how to play this game
           </button>

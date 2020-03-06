@@ -44,31 +44,16 @@ class Macc extends React.Component {
   render() {
     let { image, powerstats, biography, AP } = this.state;
     console.log();
-    /*     const imgStyle = {
-      height: "380px",
-      paddingLeft: "1.5rem"
-    }; */
     return (
       <React.Fragment className="cardcontainer">
-        <img
-          id="pics"
-          alt="NoPictureInApi"
-          src={image.url} /* style={imgStyle} */
-        />
-
-        {/*         <p>Intelligence {powerstats.intelligence}</p>
-          <p>Strength {powerstats.strength}</p>
-          <p>Speed {powerstats.speed}</p> */}
+        <img id="pics" alt="NoPictureInApi" src={image.url} />
         <p id="character_name">
           {biography["full-name"]
             ? biography["full-name"]
             : "Sorry NoName InTheApi"}
         </p>
         <p>Durability: {powerstats.durability}</p>
-        {/*          <p>Power {powerstats.power}</p>
-          <p>Combat {powerstats.combat}</p> */}
         <p>Attack Power: {AP}</p>
-        {/*          <p>Health Points {powerstats.durability}</p> */}
       </React.Fragment>
     );
   }

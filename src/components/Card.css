@@ -5,7 +5,7 @@ body {
 .field {
   display: grid;
   grid-gap: 10px;
-  background-color: #fff;
+  background-color: #398d90;
   color: #444; /* 
   grid-template-columns: 65px 65px 65px 65px 65px 65px 65px 65px 65px; */
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

@@ -31,17 +31,18 @@ class End extends Component {
               ? "You won! Nice game :)"
               : "The computer won. Maybe next time..."}
           </h2>
+
+          <Link to="/Game" id="endPlayAgain">
+            <button
+              id="endPlayAgainButton"
+              ref={playAgainButton => {
+                this.playAgainButton = playAgainButton;
+              }}
+            >
+              Play again!
+            </button>
+          </Link>
         </div>
-        <Link to="/Game" id="endPlayAgain">
-          <button
-            id="endPlayAgainButton"
-            ref={playAgainButton => {
-              this.playAgainButton = playAgainButton;
-            }}
-          >
-            Play again!
-          </button>
-        </Link>
       </div>
     );
   }

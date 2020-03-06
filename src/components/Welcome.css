@@ -1,6 +1,6 @@
-
 .container {
   text-align: center;
+  background-color: cadetblue;
 }
 
 .main-content {
@@ -9,6 +9,8 @@
 
 #game-title {
   font-size: 70px;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0px 1px 0px;
 }
 
 #welcome {
@@ -17,26 +19,34 @@
 
 #start-game {
   margin-top: 20px;
-  box-shadow: rgb(255, 246, 175) 0px 1px 0px 0px;
-  background: linear-gradient(rgb(255, 236, 100) 5%, rgb(255, 171, 35) 100%)
-    rgb(255, 236, 100);
-  border-radius: 6px;
-  border: 1px solid rgb(255, 170, 34);
+  box-shadow: rgb(175, 222, 255) 0px 1px 0px 0px;
+  background: linear-gradient(rgb(100, 198, 255) 5%, rgb(3, 99, 181) 100%)
+    rgb(100, 183, 255);
+  border-radius: 8px;
+  border: 1px solid rgb(3, 103, 206);
   display: inline-block;
   cursor: pointer;
-  color: rgb(51, 51, 51);
+  color: rgb(252, 252, 252);
   font-family: Arial;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
-  padding: 6px 24px;
+  padding: 20px 90px;
   text-decoration: none;
-  text-shadow: rgb(255, 238, 102) 0px 1px 0px;
+  text-shadow: rgb(0, 0, 0) 0px 1px 0px;
 }
 #start-game:hover {
-  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-  background-color: #ffab23;
+  background: linear-gradient(
+    to bottom,
+    rgb(3, 99, 181) 5%,
+    rgb(100, 198, 255) 100%
+  );
+
+  background-color: rgb(100, 183, 255);
 }
 #start-game:active {
   position: relative;
   top: 1px;
+}
+.field {
+  background-color: #398d90;
 }
