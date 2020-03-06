@@ -2,6 +2,12 @@ body {
   margin: 40px;
 }
 
+.winnerText {
+  font-size: 34px;
+  margin-top: 120px;
+  color: #c5b81a;
+}
+
 .field {
   display: grid;
   grid-gap: 10px;
@@ -12,6 +18,26 @@ body {
   grid-template-rows: 110px 325px 110px;
 }
 
+#next-round {
+  margin-top: 20px;
+  box-shadow: rgb(175, 222, 255) 0px 1px 0px 0px;
+  background: linear-gradient(rgb(100, 198, 255) 5%, rgb(3, 99, 181) 100%)
+    rgb(100, 183, 255);
+  border-radius: 8px;
+  border: 1px solid rgb(3, 103, 206);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(252, 252, 252);
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 25px;
+  margin-right: auto;
+  margin-left: auto;
+  text-decoration: none;
+  text-shadow: rgb(0, 0, 0) 0px 1px 0px;
+}
+
 .box {
   border: 1px solid #444;
   color: #444;
@@ -19,6 +45,10 @@ body {
   padding: 5px;
   font-size: 150%;
 }
+
+.box .winnerText {
+}
+
 .cardcontainer {
   width: 200px;
   text-align: center;
@@ -66,13 +96,13 @@ body {
 }
 
 .h {
-  grid-column: 8/10;
+  grid-column: 8;
   grid-row: 1;
 }
-/* .i {
+.i {
   grid-column: 9;
   grid-row: 1;
-} */
+}
 /* 
 .j {
   grid-column: 1/3;
@@ -90,6 +120,7 @@ body {
 .m {
   grid-column: 5;
   grid-row: 2;
+  text-align: center;
 }
 .n {
   grid-column: 6/10;

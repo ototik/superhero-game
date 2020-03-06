@@ -52,6 +52,7 @@ class Cards extends React.Component {
         json1.power = data.powerstats.power;
         json1.combat = data.powerstats.combat;
         json1.image = data.image.url;
+        json1.AP = this.state.AP;
         console.log(json1.name, "json1");
       });
   }
