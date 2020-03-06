@@ -1,6 +1,8 @@
 import React from "react";
 import "./cards.css";
+import card1data from "./card1data";
 
+const json1 = card1data;
 class Cards extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,13 @@ class Cards extends React.Component {
       powerstats: "",
       biography: "",
       attackPower: "",
+      name: "",
+      intelligence: "",
+      strength: "",
+      speed: "",
+      durability: "",
+      power: "",
+      combat: "",
       randomInt: Math.floor(Math.random() * Math.floor(731))
     };
     this.calcAP = this.calcAP.bind(this);
@@ -25,10 +34,25 @@ class Cards extends React.Component {
           apidata: data,
           image: data.image,
           biography: data.biography,
-          powerstats: data.powerstats
+          powerstats: data.powerstats,
+          name: data.biography["full-name"],
+          intelligence: data.powerstats.intelligence,
+          strength: data.powerstats.strength,
+          speed: data.powerstats.speed,
+          durability: data.powerstats.durability,
+          power: data.powerstats.power,
+          combat: data.powerstats.combat
         });
         this.calcAP();
-        console.log();
+        json1.name = data.biography["full-name"];
+        json1.intelligence = data.powerstats.intelligence;
+        json1.strength = data.powerstats.strength;
+        json1.speed = data.powerstats.speed;
+        json1.durability = data.powerstats.durability;
+        json1.power = data.powerstats.power;
+        json1.combat = data.powerstats.combat;
+        json1.image = data.image.url;
+        console.log(json1.name, "json1");
       });
   }
 
@@ -45,20 +69,65 @@ class Cards extends React.Component {
     let { image, powerstats, biography, AP } = this.state;
     console.log();
     return (
-      <div>
-        <div className="cardcontainer">
-          <img id="pics" alt="Harry Potter" src={image.url} />
-          <p id="character-name">{biography["full-name"]}</p>
-          <p>Intelligence {powerstats.intelligence}</p>
-          <p>Strength {powerstats.strength}</p>
-          <p>Speed {powerstats.speed}</p>
-          <p>Durability {powerstats.durability}</p>
-          <p>Power {powerstats.power}</p>
-          <p>Combat {powerstats.combat}</p>
-          <p>Attack Power {AP}</p>
-          <p>Health Points {powerstats.durability}</p>
+      <React.Fragment className="cardcontainer">
+        <div className="img2">
+          <img id="pics" alt="NoPictureInApi" src={image.url} />
+          <p id="character_name">
+            {biography["full-name"]
+              ? biography["full-name"]
+              : "Sorry NoName InTheApi"}
+          </p>
+          <p>Durability: {powerstats.durability}</p>
+          <p>Attack Power: {AP}</p>
         </div>
-      </div>
+        <div className="card2">
+          <div>
+            <p id="card-details">
+              <span style={{ fontWeight: "bold" }}>#ID:</span>{" "}
+              {this.state.randomInt}
+            </p>
+            <hr />
+            <p id="card-details">
+              <span style={{ fontWeight: "bold" }}>NAME:</span>{" "}
+              {this.state.name}
+            </p>
+            <hr />
+            <p id="card-details">
+              {" "}
+              <span style={{ fontWeight: "bold" }}>INTELLIGENCE:</span>{" "}
+              {this.state.intelligence}
+            </p>
+            <hr />
+            <p id="card-details">
+              <span style={{ fontWeight: "bold" }}>STRENGTH:</span>{" "}
+              {this.state.strength}
+            </p>
+            <hr />
+            <p id="card-details">
+              {" "}
+              <span style={{ fontWeight: "bold" }}>SPEED:</span>
+              {this.state.speed}
+            </p>
+            <hr />
+            <p id="card-details">
+              <span style={{ fontWeight: "bold" }}>DURABILITY:</span>{" "}
+              {this.state.durability}
+            </p>
+            <hr />
+            <p id="card-details">
+              {" "}
+              <span style={{ fontWeight: "bold" }}>POWER:</span>
+              {this.state.power}
+            </p>
+            <hr />
+            <p id="card-details">
+              {" "}
+              <span style={{ fontWeight: "bold" }}>COMBAT:</span>
+              {this.state.combat}{" "}
+            </p>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

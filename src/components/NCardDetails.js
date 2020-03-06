@@ -1,6 +1,7 @@
-import React from "react";
-import data from "./data";
-import "./NCardDetails.css";
+/* import React from "react";
+import data from "./data";/* 
+import "./NCardDetails.css"; 
+import "./Macc.css"
 
 class NCardDetails extends React.Component {
   constructor(props) {
@@ -17,47 +18,52 @@ class NCardDetails extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log("ndetails mounted")
+  }
+
   render() {
+    console.log('ndetailsrend', data.name)
     return (
       <div className="card">
         <div>
-          <p>
+          <p id="card-details">
             <span style={{ fontWeight: "bold" }}>#ID:</span> {this.state.id}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             <span style={{ fontWeight: "bold" }}>NAME:</span> {this.state.name}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             {" "}
             <span style={{ fontWeight: "bold" }}>INTELLIGENCE:</span>{" "}
             {this.state.intelligence}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             <span style={{ fontWeight: "bold" }}>STRENGTH:</span>{" "}
             {this.state.strength}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             {" "}
             <span style={{ fontWeight: "bold" }}>SPEED:</span>
             {this.state.speed}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             <span style={{ fontWeight: "bold" }}>DURABILITY:</span>{" "}
             {this.state.durability}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             {" "}
             <span style={{ fontWeight: "bold" }}>POWER:</span>
             {this.state.power}
           </p>
           <hr />
-          <p>
+          <p id="card-details">
             {" "}
             <span style={{ fontWeight: "bold" }}>COMBAT:</span>
             {this.state.combat}{" "}
@@ -69,3 +75,4 @@ class NCardDetails extends React.Component {
 }
 
 export default NCardDetails;
+ */
