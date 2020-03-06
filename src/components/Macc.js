@@ -1,5 +1,6 @@
 import React from "react";
 import "./Macc.css";
+import data from "./data";
 
 class Macc extends React.Component {
   constructor(props) {
@@ -10,9 +11,20 @@ class Macc extends React.Component {
       powerstats: "",
       biography: "",
       attackPower: "",
-      randomInt: Math.floor(Math.random() * Math.floor(731))
+      AP: "",
+      randomInt: Math.floor(Math.random() * Math.floor(731)),
+      /*       computerImage: data.computerChose.image,
+      computerName: data.computerChose.name,
+      computerDurability: data.computerChose.durability,
+      computerPower: data.computerChose.power,
+      userImage: data.userChose.image,
+      userName: data.userChose.name,
+      userDurability: data.userChose.durability,
+      userPower: data.userChose.power, */
+      clicked: false
     };
     this.calcAP = this.calcAP.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   componentDidMount() {
@@ -20,12 +32,12 @@ class Macc extends React.Component {
       `https://www.superheroapi.com/api.php/4230529273639827/${this.state.randomInt}`
     )
       .then(res => res.json())
-      .then(data => {
+      .then(apidata => {
         this.setState({
-          apidata: data,
-          image: data.image,
-          biography: data.biography,
-          powerstats: data.powerstats
+          apidata: apidata,
+          image: apidata.image,
+          biography: apidata.biography,
+          powerstats: apidata.powerstats
         });
         this.calcAP();
         console.log();
@@ -41,6 +53,20 @@ class Macc extends React.Component {
     this.setState({ AP: Math.floor(sum / stats.length) });
   }
 
+  handleOnClick = event => {
+    /*     this.setState({
+      clicked: true
+    }); */
+    let { image, powerstats, biography, AP } = this.state;
+    data.userChose.image = image.url;
+    data.userChose.name = biography["full-name"];
+    data.userChose.durability = powerstats.durability;
+    data.userChose.power = AP;
+    console.log(data.userChose.name);
+    console.log(data.userChose.durability);
+    console.log(data.userChose.power);
+  };
+
   render() {
     let { image, powerstats, biography, AP } = this.state;
     console.log();
@@ -50,25 +76,30 @@ class Macc extends React.Component {
     }; */
     return (
       <React.Fragment className="cardcontainer">
-        <img
-          id="pics"
-          alt="NoPictureInApi"
-          src={image.url} /* style={imgStyle} */
-        />
-
-        {/*         <p>Intelligence {powerstats.intelligence}</p>
-          <p>Strength {powerstats.strength}</p>
-          <p>Speed {powerstats.speed}</p> */}
-        <p id="character_name">
-          {biography["full-name"]
-            ? biography["full-name"]
-            : "Sorry NoName InTheApi"}
-        </p>
-        <p>Durability: {powerstats.durability}</p>
-        {/*          <p>Power {powerstats.power}</p>
-          <p>Combat {powerstats.combat}</p> */}
-        <p>Attack Power: {AP}</p>
-        {/*          <p>Health Points {powerstats.durability}</p> */}
+        {this.state.smallCard ? (
+          <img
+            id="pics"
+            alt="NoPictureInApi"
+            src={image.url}
+            style={{ height: 100 }}
+          ></img>
+        ) : (
+          <div>
+            <img
+              id="pics"
+              alt="NoPictureInApi"
+              src={image.url}
+              onClick={!this.state.clicked ? this.handleOnClick : null}
+            ></img>
+            <p id="character_name">
+              {biography["full-name"]
+                ? biography["full-name"]
+                : "Sorry NoName InTheApi"}
+            </p>
+            <p>Durability: {powerstats.durability}</p>
+            <p>Attack Power: {AP}</p>
+          </div>
+        )}
       </React.Fragment>
     );
   }

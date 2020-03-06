@@ -12,5 +12,17 @@
   "power": "100",
   "combat": "85",
   "image": "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg",
-  "winner": "user"
+  "winner": "user",
+  "userChose": [
+    { "image": "" },
+    { "name": "" },
+    { "durability": "" },
+    { "power": "" }
+  ],
+  "computerChose": [
+    { "image": "" },
+    { "name": "" },
+    { "durability": "" },
+    { "power": "" }
+  ]
 }
