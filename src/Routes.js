@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import history from "./history";
 import Welcome from "./components/Welcome";
-import Macc from "./components/Macc";
-import End from "./components/the-end/End";
-
+import End from "./components/End";
+import Card from "./components/Card";
 
 export default class Routes extends Component {
   render() {
@@ -12,8 +11,7 @@ export default class Routes extends Component {
       <Router history={history}>
         <Switch>
           <Route path="/" exact component={Welcome} />
-          <Route path="/Game" exact component={Game} />
-          <Route path="/Macc" component={Macc} />
+          <Route path="/Card" exact component={Card} />
           <Route path="/End" exact component={End} />
         </Switch>
       </Router>
