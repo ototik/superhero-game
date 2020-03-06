@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
-import Macc from "./Macc";
-import Nhp from "./Nhp";
+import Macc from "./Macc"; /* 
+import Nhp from "./Nhp"; */
 import Cards from "./Cards";
 import card1data from "./card1data";
 import data from "./data";
@@ -9,11 +9,15 @@ import data from "./data";
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { clicked: false };
+    this.state = {
+      clicked: false
+    };
     this.handleOnClick = this.handleOnClick.bind(this);
   }
-  handleOnClick = event => {
-    this.setState({ clicked: !this.state.clicked });
+  handleOnClick = () => {
+    this.setState({
+      clicked: !this.state.clicked
+    });
     setTimeout(() => window.location.reload(), 3000);
   };
 
@@ -56,51 +60,25 @@ class Card extends React.Component {
         <div className="box h"></div>
         <div className="box i"></div>
         {/*  <div className="box j"></div> */}
-        {this.state.clicked ? (
-          <React.Fragment>
-            <div className="box l">
-              <Macc />
+        <div className="box l">
+          <Macc />
+        </div>
+        <div className="box m">
+          {this.state.clicked === false ? (
+            <button id="next-round" onClick={this.handleOnClick}>
+              Fight!
+            </button>
+          ) : card1data.AP > data.AP ? (
+            <div>
+              <p className="winnerText">{card1data.name} won!</p>
             </div>
-            <div className="box m">
-              {this.state.clicked === false ? (
-                <button id="next-round" onClick={this.handleOnClick}>
-                  Fight!
-                </button>
-              ) : card1data.AP > data.AP ? (
-                <div>
-                  <p className="winnerText">{card1data.name} won!</p>
-                </div>
-              ) : (
-                <p className="winnerText">{data.name} won!</p>
-              )}
-            </div>
-            <div className="box n">
-              <Cards />
-            </div>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <div className="box l">
-              <Macc />
-            </div>
-            <div className="box m">
-              {this.state.clicked === false ? (
-                <button id="next-round" onClick={this.handleOnClick}>
-                  Fight!
-                </button>
-              ) : card1data.AP > data.AP ? (
-                <div>
-                  <p className="winnerText">{card1data.name} won!</p>
-                </div>
-              ) : (
-                <p className="winnerText">{data.name} won!</p>
-              )}
-            </div>
-            <div className="box n">
-              <Cards />
-            </div>
-          </React.Fragment>
-        )}
+          ) : (
+            <p className="winnerText">{data.name} won!</p>
+          )}
+        </div>
+        <div className="box n">
+          <Cards />
+        </div>
         {/* <div className="box o"></div> */}
         {/* 
       <div class="box p">16</div> */}

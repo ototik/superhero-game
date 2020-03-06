@@ -4,7 +4,7 @@
   "name2": "Player 2",
   "hp2": "5",
   "id": "2",
-  "name": "Abe Sapien",
+  "name": "No one",
   "intelligence": "88",
   "strength": "28",
   "speed": "35",
@@ -14,5 +14,6 @@
   "image": "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg",
   "winner": "user",
   "AP": "",
-  "mounted": false
+  "mounted": false,
+  "rounds": 5
 }

@@ -67,7 +67,7 @@ class Cards extends React.Component {
   }
 
   render() {
-    let { image, powerstats, biography, AP } = this.state;
+    let { image, biography, AP } = this.state;
     console.log();
     return (
       <React.Fragment className="cardcontainer">
@@ -78,7 +78,6 @@ class Cards extends React.Component {
               ? biography["full-name"]
               : "Sorry NoName InTheApi"}
           </p>
-          <p>Durability: {powerstats.durability}</p>
           <p>Attack Power: {AP}</p>
         </div>
         <div className="card">
@@ -105,8 +104,7 @@ class Cards extends React.Component {
             </p>
             <hr />
             <p id="card-details">
-              {" "}
-              <span style={{ fontWeight: "bold" }}>SPEED:</span>
+              <span style={{ fontWeight: "bold" }}>SPEED:</span>{" "}
               {this.state.speed}
             </p>
             <hr />
@@ -116,14 +114,12 @@ class Cards extends React.Component {
             </p>
             <hr />
             <p id="card-details">
-              {" "}
-              <span style={{ fontWeight: "bold" }}>POWER:</span>
+              <span style={{ fontWeight: "bold" }}>POWER:</span>{" "}
               {this.state.power}
             </p>
             <hr />
             <p id="card-details">
-              {" "}
-              <span style={{ fontWeight: "bold" }}>COMBAT:</span>
+              <span style={{ fontWeight: "bold" }}>COMBAT:</span>{" "}
               {this.state.combat}{" "}
             </p>
           </div>
