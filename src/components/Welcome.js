@@ -19,7 +19,12 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div
+        className="container"
+        /* style={{
+          backgroundImage: `url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fi.imgur.com%2FOVZmIpg.jpg)`
+        }} */
+      >
         <div className="main-content">
           <h1 id="game-title">Hero Game</h1>
           <h1 id="welcome">Welcome</h1>
@@ -40,7 +45,7 @@ class Welcome extends Component {
             </h3>
           )}
           <br />
-          <Link to="/Game">
+          <Link to="/Card">
             <button
               id="start-game"
               ref={ref => {
@@ -48,7 +53,7 @@ class Welcome extends Component {
               }}
             >
               Start the game
-          </button>
+            </button>
           </Link>
         </div>
       </div>
