@@ -1,18 +1,19 @@
 import React from "react";
 import "./Nhp.css";
 import data from "./data";
+import card1data from './card1data';
 
 class Nhp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hp1: data.hp1,
+      hp1: card1data.hp1,
       hp2: data.hp2
     };
   }
 
   setHp() {
-    this.setState({ hp1: data.hp1, hp2: data.hp2 });
+    this.setState({ hp1: card1data.hp1, hp2: data.hp2 });
   }
 
   render() {
@@ -22,8 +23,8 @@ class Nhp extends React.Component {
           <div className="player1">
             <p>
               {" "}
-              <span style={{ fontWeight: "bold" }}> {data.name1} </span>/{" "}
-              {data.hp1} HP
+              <span style={{ fontWeight: "bold" }}> {card1data.name1} </span>/{" "}
+              {card1data.hp1} HP
             </p>
 
             <div className="meter">

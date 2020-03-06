@@ -4,67 +4,72 @@ import Macc from "./Macc";
 import NCardDetails from "./NCardDetails";
 import Nhp from "./Nhp";
 
+
+
 function Card() {
+  const handleOnclick = (event) => {
+    console.log(event.target, 'event')
+  }
   return (
     <div className="field">
-      <div class="box a">1</div>
-      <div class="box b">2</div>
-      <div class="box c">
+      <div className="box a">1</div>
+      <div className="box b">2</div>
+      <div className="box c">
         <img
           id="cardback"
           src="https://i.imgur.com/1tG5U8d.jpg"
           alt="cardback"
         />
       </div>
-      <div class="box d">
+      <div className="box d">
         <img
           id="cardback"
           src="https://i.imgur.com/1tG5U8d.jpg"
           alt="cardback"
         />
       </div>
-      <div class="box e">
+      <div className="box e">
         <img
           id="cardback"
           src="https://i.imgur.com/1tG5U8d.jpg"
           alt="cardback"
         />
       </div>
-      <div class="box f">
+      <div className="box f">
         <img
           id="cardback"
           src="https://i.imgur.com/1tG5U8d.jpg"
           alt="cardback"
         />
       </div>
-      <div class="box g">7</div>
-      <div class="box h">
+      <div className="box g">7</div>
+      <div className="box h">
         <Nhp />
       </div>
-      <div class="box j">
+      <div className="box j">
         <NCardDetails />
       </div>
-      <div class="box l">
+      <div className="box l" onClick={handleOnclick}>
         <Macc />
       </div>
-      <div class="box m">13</div>
-      <div class="box n">
+      <div className="box m">13</div>
+      <div className="box n">
         <Macc />
       </div>
-      <div class="box o">
+      <div className="box o">
         <NCardDetails />
       </div>
       {/* 
       <div class="box p">16</div> */}
-      <div class="box q">17</div>
-      <div class="box r">18</div>
-      <div class="box s">19</div>
-      <div class="box t">20</div>
-      <div class="box u">21</div>
-      <div class="box v">22</div>
-      <div class="box w">23</div>
-      <div class="box x">24</div>
-      <div class="box y">25</div>
+      <div className="box q">17</div>
+      <div className="box r">18</div>
+      <div className="box s">19</div>
+      <div className="box t">20</div>
+      <div className="box u">21</div>
+      <div className="box v">22</div>
+      <div className="box w">23</div>
+      <div className="box x">24</div>
+      <div className="box y">25</div>
     </div>
   );
 }

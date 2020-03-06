@@ -1,6 +1,8 @@
 import React from "react";
 import "./Macc.css";
+import data from './data'
 
+const json = data
 class Macc extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,16 @@ class Macc extends React.Component {
           powerstats: data.powerstats
         });
         this.calcAP();
-        console.log();
+        json.name = data.biography["full-name"]
+        json.intelligence = data.powerstats.intelligence
+        json.strength = data.powerstats.strength
+        json.speed = data.powerstats.speed
+        json.durability = data.powerstats.durability
+        json.power = data.powerstats.power
+        json.combat = data.powerstats.combat
+        json.image = data.image.url
+        json.mounted = true
+        console.log(json.name, 'json', 'macc mounted');
       });
   }
 
@@ -49,7 +60,7 @@ class Macc extends React.Component {
       paddingLeft: "1.5rem"
     }; */
     return (
-      <React.Fragment className="cardcontainer">
+      <React.Fragment>
         <img
           id="pics"
           alt="NoPictureInApi"

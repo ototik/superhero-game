@@ -17,7 +17,12 @@ class NCardDetails extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log("ndetails mounted")
+  }
+
   render() {
+    console.log('ndetailsrend', data.name)
     return (
       <div className="card">
         <div>

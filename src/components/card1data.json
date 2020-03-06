@@ -1,0 +1,16 @@
+{
+    "name1": "Player 1",
+    "hp1": "30",
+    "name2": "Player 2",
+    "hp2": "30",
+    "id": "2",
+    "name": "Abe Sapien",
+    "intelligence": "88",
+    "strength": "28",
+    "speed": "35",
+    "durability": "65",
+    "power": "100",
+    "combat": "85",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg",
+    "winner": "user"
+  }
