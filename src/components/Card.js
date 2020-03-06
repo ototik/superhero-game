@@ -1,7 +1,6 @@
 import React from "react";
 import "./Card.css";
 import Macc from "./Macc";
-import NCardDetails from "./NCardDetails";
 import Nhp from "./Nhp";
 
 
@@ -47,7 +46,6 @@ function Card() {
         <Nhp />
       </div>
       <div className="box j">
-        <NCardDetails />
       </div>
       <div className="box l" onClick={handleOnclick}>
         <Macc />
@@ -57,7 +55,6 @@ function Card() {
         <Macc />
       </div>
       <div className="box o">
-        <NCardDetails />
       </div>
       {/* 
       <div class="box p">16</div> */}

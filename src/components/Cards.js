@@ -12,6 +12,14 @@ class Cards extends React.Component {
       powerstats: "",
       biography: "",
       attackPower: "",
+      id: "",
+      name: "",
+      intelligence: "",
+      strength: "",
+      speed: "",
+      durability: "",
+      power: "",
+      combat: "",
       randomInt: Math.floor(Math.random() * Math.floor(731))
     };
     this.calcAP = this.calcAP.bind(this);
@@ -27,7 +35,14 @@ class Cards extends React.Component {
           apidata: data,
           image: data.image,
           biography: data.biography,
-          powerstats: data.powerstats
+          powerstats: data.powerstats,
+          name: data.biography["full-name"],
+      intelligence: data.powerstats.intelligence,
+      strength: data.powerstats.strength,
+      speed: data.powerstats.speed,
+      durability: data.powerstats.durability,
+      power: data.powerstats.power,
+      combat: data.powerstats.combat,
         });
         this.calcAP();
         json1.name = data.biography["full-name"]
@@ -54,31 +69,67 @@ class Cards extends React.Component {
   render() {
     let { image, powerstats, biography, AP } = this.state;
     console.log();
-    /*     const imgStyle = {
-      height: "380px",
-      paddingLeft: "1.5rem"
-    }; */
+
+    console.log('ndetailsrend', data.name)
     return (
       <React.Fragment>
         <img
           id="pics"
           alt="NoPictureInApi"
-          src={image.url} /* style={imgStyle} */
+          src={image.url} 
         />
-
-        {/*         <p>Intelligence {powerstats.intelligence}</p>
-          <p>Strength {powerstats.strength}</p>
-          <p>Speed {powerstats.speed}</p> */}
         <p id="character_name">
           {biography["full-name"]
             ? biography["full-name"]
             : "Sorry NoName InTheApi"}
         </p>
         <p>Durability: {powerstats.durability}</p>
-        {/*          <p>Power {powerstats.power}</p>
-          <p>Combat {powerstats.combat}</p> */}
         <p>Attack Power: {AP}</p>
-        {/*          <p>Health Points {powerstats.durability}</p> */}
+        <div className="card">
+        <div>
+          <p id="card-details">
+            <span style={{ fontWeight: "bold" }}>#ID:</span> {this.state.id}
+          </p>
+          <hr />
+          <p id="card-details">
+            <span style={{ fontWeight: "bold" }}>NAME:</span> {this.state.name}
+          </p>
+          <hr />
+          <p id="card-details">
+            {" "}
+            <span style={{ fontWeight: "bold" }}>INTELLIGENCE:</span>{" "}
+            {this.state.intelligence}
+          </p>
+          <hr />
+          <p id="card-details">
+            <span style={{ fontWeight: "bold" }}>STRENGTH:</span>{" "}
+            {this.state.strength}
+          </p>
+          <hr />
+          <p id="card-details">
+            {" "}
+            <span style={{ fontWeight: "bold" }}>SPEED:</span>
+            {this.state.speed}
+          </p>
+          <hr />
+          <p id="card-details">
+            <span style={{ fontWeight: "bold" }}>DURABILITY:</span>{" "}
+            {this.state.durability}
+          </p>
+          <hr />
+          <p id="card-details">
+            {" "}
+            <span style={{ fontWeight: "bold" }}>POWER:</span>
+            {this.state.power}
+          </p>
+          <hr />
+          <p id="card-details">
+            {" "}
+            <span style={{ fontWeight: "bold" }}>COMBAT:</span>
+            {this.state.combat}{" "}
+          </p>
+        </div>
+      </div>
       </React.Fragment>
     );
   }
